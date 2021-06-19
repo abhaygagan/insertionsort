@@ -5,10 +5,10 @@ def selectionsort(arr):
             if arr[j]<arr[i]:
                 temp=j
         arr[i],arr[temp]=arr[temp],arr[i]
-
+    return arr
 
 selectionsort([10,8,6,4,2])
-print(arr) 
+
 
 
 def bubblesort(nums):
@@ -19,3 +19,19 @@ def bubblesort(nums):
     return nums
 
 bubblesort([10,8,6,4,2])
+
+
+
+import random
+def insertionsort(nums):
+    for i in range(1,len(nums)):
+        anchor=nums[i]
+        j=i-1
+        while j>=0 and anchor<nums[j]:
+            nums[j+1]=nums[j]
+            j=j-1
+        nums[j+1]=anchor
+
+nums=random.sample(range(0,30),5)
+insertionsort(nums)
+print(nums)
